@@ -31,14 +31,7 @@ public class FlightController {
     public FlightDTO findById(@PathVariable Long id) throws Exception {
         return flightService.findById(id);
     }
-    @GetMapping("/findFlightByStatus/{val}")
-    public List<FlightDTO> findFlightByStatus(@PathVariable("val") String val) throws Exception {
-        List<Flight> flightList = flightRepository.findFlightByStatus(val);
-        return flightList
-                .stream()
-                .map(flight -> this.modelMapperService.forResponse().map(flight,FlightDTO.class))
-                .collect(Collectors.toList());
-    }
+  
 
     @GetMapping("/getall")
     public List<FlightDTO> getAll() {
