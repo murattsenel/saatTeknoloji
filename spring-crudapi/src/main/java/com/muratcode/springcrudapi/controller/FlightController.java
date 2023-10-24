@@ -31,7 +31,6 @@ public class FlightController {
     public FlightDTO findById(@PathVariable Long id) throws Exception {
         return flightService.findById(id);
     }
-  
 
     @GetMapping("/getall")
     public List<FlightDTO> getAll() {
